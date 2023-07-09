@@ -23,6 +23,9 @@ public class CarController {
 	public List<Car> getAllCars(){
 		return carRepository.findAll();
 	}
-	
 
+	@GetMapping("hello")
+	public String helloWorld() {
+		return "Hello World!!";
+	}
 }

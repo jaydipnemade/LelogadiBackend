@@ -1,185 +1,185 @@
 package com.cdac.lelogaadi.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="cars")
 public class Car {
-	
-		@Id
-	    @GeneratedValue(strategy = GenerationType.IDENTITY)
-	    private long id;
-		
-		@Column(name="make")		
-	    private String make;
-		
-		@Column(name="model")
-	    private String model;
-		
-		@Column(name="year")
-	    private int year;
-		
-		@Column(name="price")
-	    private double price;
-		
-		@Column(name="description", columnDefinition = "TEXT")
-	    private String description;
-		
-		@Column(name="image")
-	    private String image;
-		
-		@Column(name="is_sold")
-	    private boolean isSold;
-		
-		@Column(name="is_featured")
-	    private boolean isFeatured;
-		
-		@Column(name="distance_travelled")
-		private int distanceTravelled;
-		
-		@Column(name="fuel_type")
-	    private String fuelType;
-		
-		@Column(name="transmission")
-	    private String transmission;
-		
-		@ManyToOne(fetch = FetchType.LAZY)
-	    @JoinColumn(name = "user_id")
-	    private User user;
-		
-		public Car() {
-			
-		}
 
-		public Car(String make, String model, int year, double price, String description, String image, boolean isSold,
-				boolean isFeatured, int distanceTravelled, String fuelType, String transmission) {
-			super();
-			this.make = make;
-			this.model = model;
-			this.year = year;
-			this.price = price;
-			this.description = description;
-			this.image = image;
-			this.isSold = isSold;
-			this.isFeatured = isFeatured;
-			this.distanceTravelled = distanceTravelled;
-			this.fuelType = fuelType;
-			this.transmission = transmission;
-		}
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
 
-		public long getId() {
-			return id;
-		}
+	@Column(name="make")
+	private String make;
 
-		public void setId(long id) {
-			this.id = id;
-		}
+	@Column(name="model")
+	private String model;
 
-		public String getMake() {
-			return make;
-		}
+	@Column(name="year")
+	private int year;
 
-		public void setMake(String make) {
-			this.make = make;
-		}
+	@Column(name="price")
+	private double price;
 
-		public String getModel() {
-			return model;
-		}
+	@Column(name="description", columnDefinition = "TEXT")
+	private String description;
 
-		public void setModel(String model) {
-			this.model = model;
-		}
+	@Column(name="image")
+	private String image;
 
-		public int getYear() {
-			return year;
-		}
+	@Column(name="is_sold")
+	private boolean isSold;
 
-		public void setYear(int year) {
-			this.year = year;
-		}
+	@Column(name="is_featured")
+	private boolean isFeatured;
 
-		public double getPrice() {
-			return price;
-		}
+	@Column(name="distance_travelled")
+	private int distanceTravelled;
 
-		public void setPrice(double price) {
-			this.price = price;
-		}
+	@Column(name="fuel_type")
+	private String fuelType;
 
-		public String getDescription() {
-			return description;
-		}
+	@Column(name="transmission")
+	private String transmission;
 
-		public void setDescription(String description) {
-			this.description = description;
-		}
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "user_id")
+	private User user;
 
-		public String getImage() {
-			return image;
-		}
+	public Car() {
 
-		public void setImage(String image) {
-			this.image = image;
-		}
+	}
 
-		public boolean isSold() {
-			return isSold;
-		}
+	public Car(String make, String model, int year, double price, String description, String image, boolean isSold,
+			   boolean isFeatured, int distanceTravelled, String fuelType, String transmission) {
+		super();
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.price = price;
+		this.description = description;
+		this.image = image;
+		this.isSold = isSold;
+		this.isFeatured = isFeatured;
+		this.distanceTravelled = distanceTravelled;
+		this.fuelType = fuelType;
+		this.transmission = transmission;
+	}
 
-		public void setSold(boolean isSold) {
-			this.isSold = isSold;
-		}
+	public long getId() {
+		return id;
+	}
 
-		public boolean isFeatured() {
-		    return isFeatured;
-		}
+	public void setId(long id) {
+		this.id = id;
+	}
 
-		public void setFeatured(boolean isFeatured) {
-		    this.isFeatured = isFeatured;
-		}
+	public String getMake() {
+		return make;
+	}
+
+	public void setMake(String make) {
+		this.make = make;
+	}
+
+	public String getModel() {
+		return model;
+	}
+
+	public void setModel(String model) {
+		this.model = model;
+	}
+
+	public int getYear() {
+		return year;
+	}
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	public boolean isSold() {
+		return isSold;
+	}
+
+	public void setSold(boolean isSold) {
+		this.isSold = isSold;
+	}
+
+	public boolean isFeatured() {
+		return isFeatured;
+	}
+
+	public void setFeatured(boolean isFeatured) {
+		this.isFeatured = isFeatured;
+	}
 
 
-		public int getDistanceTravelled() {
-			return distanceTravelled;
-		}
+	public int getDistanceTravelled() {
+		return distanceTravelled;
+	}
 
-		public void setDistanceTravelled(int distanceTravelled) {
-			this.distanceTravelled = distanceTravelled;
-		}
+	public void setDistanceTravelled(int distanceTravelled) {
+		this.distanceTravelled = distanceTravelled;
+	}
 
-		public String getFuelType() {
-			return fuelType;
-		}
+	public String getFuelType() {
+		return fuelType;
+	}
 
-		public void setFuelType(String fuelType) {
-			this.fuelType = fuelType;
-		}
+	public void setFuelType(String fuelType) {
+		this.fuelType = fuelType;
+	}
 
-		public String getTransmission() {
-			return transmission;
-		}
+	public String getTransmission() {
+		return transmission;
+	}
 
-		public void setTransmission(String transmission) {
-			this.transmission = transmission;
-		}
+	public void setTransmission(String transmission) {
+		this.transmission = transmission;
+	}
 
-		public User getUser() {
-			return user;
-		}
+	public User getUser() {
+		return user;
+	}
 
-		public void setUser(User user) {
-			this.user = user;
-		}
-		
-		
-	    
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+
+
 }
